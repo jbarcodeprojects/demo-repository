@@ -1,0 +1,12 @@
+name: Trivy CSPM scan
+
+on:
+  pullRequest:
+    branches:
+    - "*"
+env:
+  DOCKER_IMAGE: "accuknox/scandemo:latest"
+  DOCKERFILE_CONTEXT: "nginx/Dockerfile"
+  CSPM_URL: "cspm.accuknox.com"
+  CSPM_TOKEN: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkwNjk5NzQ2LCJqdGkiOiI3OWUxMzkyMTgyYjk0MDYwYTlkNTA2ODc3MTE1OTI2OSIsImlzcyI6ImNzcG0uZGV2LmFjY3Vrbm94LmNvbSJ9.b53MQWggdN1zxMEF89eyoA6Q3ry1Gy5GyCHQTQpPdCg1KbTqAFVcmL6Ai_qwHEo9rzovewMVegbKXe6gC898sV20Pa8LsSjDwPvKKuX6EN-un_1vwJDcptLxVu_nOOIr9-EvMlqdrSP-7lLzjiUe1fVYE8UVBrIrXKZh2187ZLTHpCTVySdOBIZAkCKeKCFjgps8GWpB48X1og0EkBTyD4rMipvdv-EX_Km3Hebmk_KmcimwFQOyDORxgQ5xY8Ku5Ruys_UhPabwQAh49ql8s1apakyxUrBcLZo2mNUU77RjFB2-451an3QF_WY3pYjYBImlgU8qxysR0XUtbudc2w"
+  TENANT_ID: "342"
