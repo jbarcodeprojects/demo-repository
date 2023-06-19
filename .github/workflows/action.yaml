@@ -20,11 +20,11 @@ jobs:
         uses: actions/checkout@v2
       - name: Build an image from Dockerfile
         run: |
-          docker build -t DOCKER_IMAGE DOCKERFILE_CONTEXT
+          docker build -t ${{env.DOCKER_IMAGE}} ${{env.DOCKERFILE_CONTEXT}}
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: DOCKER_IMAGE
+          image-ref: ${{env.DOCKER_IMAGE}}
           format: 'json'
           exit-code: '1'
           ignore-unfixed: true
