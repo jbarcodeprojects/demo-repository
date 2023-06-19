@@ -1,7 +1,7 @@
 name: Trivy CSPM scan
 
 on:
-  pullRequest:
+  pull_request:
     branches:
     - "*"
 env:
