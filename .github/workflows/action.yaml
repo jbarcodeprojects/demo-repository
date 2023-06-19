@@ -7,7 +7,7 @@ on:
 env:
   DOCKER_IMAGE: "accuknox/bootstrap:nginxj"
   DOCKERFILE_CONTEXT: "${{ github.workspace }}/nginx/"
-  CSPM_URL: "cspm.accuknox.com"
+  CSPM_URL: "app.dev.accuknox.com"
   CSPM_TOKEN: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg5NzYzMTU0LCJqdGkiOiJlNTI1MjZkMmJhNDk0NDJmYTc5NzFhYTFmNGM5ZGU4OSIsImlzcyI6ImNzcG0uZGV2LmFjY3Vrbm94LmNvbSJ9.D-coEj4FwAZVStNr16RWH9ieD8KT6fMwxidvpSGxMy4l6W4dEvrwx_Oc0Xt9pL6y_NhNpWv7BoH6exuVknlWqKGFWdKorwn41ZvJy5s97T4RVX7cLTcLx664oVafJ368j04GpapkfOd8ytHKEVvwEJx6JioHi95GQ3dlr1foqOrvCBXZaXAt5rkBFJ_hIbFvacBSRB4YCwFfxprSgUJX4npXuBrO6lznpTDQlGH0avKPhgngTUDburRvyoTvCLFA9KdnMqUjb7wmz6kokJk87AAwsBtg8S7BUZJNL4K5Cx7-FnNnTJWt7s4-fW44uS1hc8-n4uRBb2zEgtr9Y1Am6A"
   TENANT_ID: "342"
 
