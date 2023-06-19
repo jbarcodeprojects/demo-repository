@@ -12,8 +12,24 @@ env:
   TENANT_ID: "342"
 
 jobs:
-  push_report_job:
-    name: Push report to CSPM panel
-    runs-on: linux
+  build:
+    name: Build
+    runs-on: ubuntu-20.04
     steps:
-    - run:  curl --location --request POST 'https://${{env.CSPM_URL}}/api/v1/artifact/?tenant_id=${{ env.TENANT_ID }}&data_type=TR&save_to_s3=false' --header 'Authorization:Bearer ${{ env.CSPM_TOKEN }}' --form 'file=@"./results.json"'
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build an image from Dockerfile
+        run: |
+          docker build -t DOCKER_IMAGE DOCKERFILE_CONTEXT
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: DOCKER_IMAGE
+          format: 'json'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
+      - name: Push report to CSPM panel
+        run: |
+          curl --location --request POST 'https://${{env.CSPM_URL}}/api/v1/artifact/?tenant_id=${{ env.TENANT_ID }}&data_type=TR&save_to_s3=false' --header 'Authorization:Bearer ${{ env.CSPM_TOKEN }}' --form 'file=@"./results.json"'
