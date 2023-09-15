@@ -3,4 +3,4 @@ This code repository (or "repo") is designed to demonstrate the best GitHub has 
 
 The repo includes an `index.html` file (so it can render a web page), two GitHub Actions workflows, and a CSS stylesheet dependency.
 
-The repo also includes a Dockerfile to create a custom nginx image to test Image scanning workflows
+The repo also includes a Dockerfile to create a custom nginx image to test Image scanning workflows.
